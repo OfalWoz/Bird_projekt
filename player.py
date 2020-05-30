@@ -1,0 +1,182 @@
+import  pygame
+from pygame.math import Vector2
+class Player(object):
+
+    def __init__(self, game):
+        self.clock = pygame.time.Clock()
+        self.minutes = 0
+        self.seconds = 0
+        self.milliseconds = 0
+        self.font = pygame.font.Font(None, 32)
+
+        self.last_minutes = 0
+        self.last_seconds = 0
+        self.last_milliseconds = 0
+
+        self.best_minutes = 10000
+        self.best_seconds = 10000
+        self.best_milliseconds = 10000
+
+        self.check = 0
+        self.lap = 0
+
+        self.done = False
+        self.start_time = pygame.time.get_ticks()
+
+        self.tor_bok = pygame.image.load('tor_bok.png')
+        self.tor = pygame.image.load('tor_one.png')
+        self.play = pygame.image.load('bolid_red_left.png')
+        self.game = game
+
+        size = self.game.screen.get_size()
+        self.hight = 695
+        self.widht = 1255
+
+        self.p_pos = Vector2(550, 500)
+        self.p_v = Vector2(0, 0)
+        self.p_a = Vector2(0, 0)
+
+
+
+    def tick(self):
+        #stoper
+        if self.milliseconds > 1000:
+            self.seconds += 1
+            self.milliseconds -= 1000
+        if self.seconds > 60:
+            self.minutes += 1
+            self.seconds -= 60
+        self.milliseconds += self.clock.tick_busy_loop(60)
+
+        #ograniczenie pola
+        if self.p_pos.x >= 943:
+            self.p_pos.x = 942
+
+        if self.p_pos.x <= 387:
+            self.p_pos.x = 388
+
+        if self.p_pos.y >= 536:
+            self.p_pos.y = 535
+
+        if self.p_pos.y <= 194:
+            self.p_pos.y = 195
+
+        if self.p_v == Vector2(0,10):
+            self.p_v = Vector2(0,9.9)
+        else:
+            self.p_v += self.p_a
+        self.p_pos += self.p_v
+        self.p_a *= 0.1
+        self.p_v *= 0.5
+
+        # ruch gracza
+        if pygame.key.get_pressed()[pygame.K_w]:
+            self.p_a += Vector2(0,-0.5)
+            self.play = pygame.image.load('bolid_red_up.png')
+        if pygame.key.get_pressed()[pygame.K_d]:
+            self.p_a += Vector2(0.5, 0)
+            self.play = pygame.image.load('bolid_red_right.png')
+        if pygame.key.get_pressed()[pygame.K_s]:
+            self.p_a += Vector2(0,0.5)
+            self.play = pygame.image.load('bolid_red_down.png')
+        if pygame.key.get_pressed()[pygame.K_a]:
+           self.p_a += Vector2(-0.5, 0)
+           self.play = pygame.image.load('bolid_red_left.png')
+        if pygame.key.get_pressed()[pygame.K_d] and pygame.key.get_pressed()[pygame.K_s]:
+            self.p_a += Vector2(0, 0.05)
+            self.p_a += Vector2(0.05, 0)
+            self.play = pygame.image.load('bolid_red_down_right.png')
+        if pygame.key.get_pressed()[pygame.K_s] and pygame.key.get_pressed()[pygame.K_a]:
+            self.p_a += Vector2(-0.05, 0)
+            self.p_a += Vector2(0, 0.05)
+            self.play = pygame.image.load('bolid_red_down_left.png')
+        if pygame.key.get_pressed()[pygame.K_w] and pygame.key.get_pressed()[pygame.K_d]:
+            self.p_a += Vector2(0,-0.05)
+            self.p_a += Vector2(0.05, 0)
+            self.play = pygame.image.load('bolid_red_up_right.png')
+        if pygame.key.get_pressed()[pygame.K_w] and pygame.key.get_pressed()[pygame.K_a]:
+            self.p_a += Vector2(0,-0.5)
+            self.p_a += Vector2(0, 0.5)
+            self.play = pygame.image.load('bolid_red_up_left.png')
+
+        #przeszkody
+        self.blok_1 = pygame.Rect(432, 255, 70, 100)
+        self.blok_2 = pygame.Rect(432, 350, 350, 100)
+        self.blok_3 = pygame.Rect(790, 450, 98, 5)
+
+        #kolizje
+        if self.blok_1.collidepoint((self.p_pos.x, self.p_pos.y)) or self.blok_2.collidepoint((self.p_pos.x, self.p_pos.y)) or self.blok_3.collidepoint((self.p_pos.x, self.p_pos.y)):
+            pygame.mixer.music.load('UI_Quirky33.mp3')
+            pygame.mixer.music.play()
+            self.p_pos = Vector2(550, 500)
+            self.check = 0
+            self.minutes = 0
+            self.seconds = 0
+            self.milliseconds = 0
+
+        #mierzenie czasu i punkty
+        self.stop = pygame.Rect(518, 490, 1, 150)
+        self.check_1 = pygame.Rect(450, 195, 1, 100)
+        self.check_2 = pygame.Rect(860, 400, 1, 40)
+
+        #checkpoints
+        if self.check_1.collidepoint((self.p_pos.x, self.p_pos.y)) and self.check < 1:
+            self.check += 1
+            print(self.check)
+            pygame.mixer.music.load('UI_Quirky1.mp3')
+            pygame.mixer.music.play()
+
+        if self.check_2.collidepoint((self.p_pos.x, self.p_pos.y)) and self.check == 1:
+            self.check += 1
+            print(self.check)
+            pygame.mixer.music.load('UI_Quirky1.mp3')
+            pygame.mixer.music.play()
+
+        #linia mety
+        if self.check >= 2 and self.stop.collidepoint((self.p_pos.x, self.p_pos.y)):
+            pygame.mixer.music.load('UI_Quirky1.mp3')
+            pygame.mixer.music.play()
+            self.last_minutes = self.minutes
+            self.last_seconds = self.seconds
+            self.last_milliseconds = self.milliseconds
+            self.last_time = (self.last_minutes * 1000000) + (self.last_seconds * 1000) + self.last_milliseconds
+            self.best_time = (self.best_minutes * 1000000) + (self.best_seconds * 1000) + self.best_milliseconds
+            if self.best_time >= self.last_time:
+                self.best_minutes = self.last_minutes
+                self.best_seconds = self.last_seconds
+                self.best_milliseconds = self.last_milliseconds
+            self.minutes = 0
+            self.seconds = 0
+            self.milliseconds = 0
+            self.check = 0
+            self.lap += 1
+
+    def draw(self):
+        self.timelabel = self.font.render("{}:{}:{}".format(self.minutes, self.seconds, self.milliseconds), 1,(0, 0, 0))
+        self.last_timelabel = self.font.render("{}:{}:{}".format(self.last_minutes, self.last_seconds, self.last_milliseconds), 1, (0, 0, 0))
+        self.best_timelabel = self.font.render("{}:{}:{}".format(self.best_minutes, self.best_seconds, self.best_milliseconds), 1, (0, 0, 0))
+
+        def draw_text(text, font, color, surface, x, y):
+            textobj = font.render(text, 1, (0,0,0))
+            textrect = textobj.get_rect()
+            textrect.topleft = (x, y)
+            surface.blit(textobj, textrect)
+        self.game.screen.blit(self.tor_bok, (-400, 250))
+        self.game.screen.blit(self.tor_bok, (self.game.szerokosc/2 + 350, 0))
+        self.game.screen.blit(self.tor, (self.game.szerokosc/2 - 350, 0)) #wyswietlanie toru
+        self.game.screen.blit(self.play, (self.p_pos.x, self.p_pos.y)) #pozycja gracza
+        draw_text('Aktualny czas:', self.font, (255, 255, 255), self.game.screen, 10, 50)
+        self.game.screen.blit(self.timelabel, (180, 50)) #aktualny czas
+        draw_text('Czas ostatniego okrążenia:', self.font, (255, 255, 255), self.game.screen, 10, 100)
+        draw_text('Najlepszy czas:', self.font, (255, 255, 255), self.game.screen, 10, 150)
+        draw_text('Okrążenie: '+str(self.lap), self.font, (255, 255, 255), self.game.screen, 10, 200)
+        draw_text('Punkty kontrolne: '+str(self.check)+'/2', self.font, (255, 255, 255), self.game.screen, 10, 250)
+        if self.lap >= 1: #wyswietlanie czasow po jednym okrazeniu
+            self.game.screen.blit(self.last_timelabel, (310, 100))
+            self.game.screen.blit(self.best_timelabel, (180, 150))
+
+        if pygame.key.get_pressed()[pygame.K_m]:
+            mx, my = pygame.mouse.get_pos()  # pozycja myszki
+            print('x-', mx)
+            print('y-', my)
+        #print(self.p_pos)
