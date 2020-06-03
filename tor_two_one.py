@@ -1,6 +1,6 @@
 import  pygame
 from pygame.math import Vector2
-class Player(object):
+class Tor_two_one(object):
 
     def __init__(self, game):
         self.clock = pygame.time.Clock()
@@ -24,7 +24,7 @@ class Player(object):
         self.start_time = pygame.time.get_ticks()
 
         self.tor_bok = pygame.image.load('tor_bok.png')
-        self.tor = pygame.image.load('tor_one.png')
+        self.tor = pygame.image.load('tor_two.png')
         self.play = pygame.image.load('bolid_red_left.png')
         self.game = game
 
@@ -35,8 +35,6 @@ class Player(object):
         self.p_pos = Vector2(550, 500)
         self.p_v = Vector2(0, 0)
         self.p_a = Vector2(0, 0)
-
-
 
     def tick(self):
         #stoper
@@ -184,7 +182,7 @@ class Player(object):
         draw_text('Czas ostatniego okrążenia:', self.font, (255, 255, 255), self.game.screen, 10, 100)
         draw_text('Najlepszy czas:', self.font, (255, 255, 255), self.game.screen, 10, 150)
         draw_text('Okrążenie: '+str(self.lap), self.font, (255, 255, 255), self.game.screen, 10, 200)
-        draw_text('Punkty kontrolne: '+str(self.check)+'/2', self.font, (255, 255, 255), self.game.screen, 10, 250)
+        draw_text('Punkty kontrolne: '+str(self.check)+'/5', self.font, (255, 255, 255), self.game.screen, 10, 250)
         if self.lap >= 1: #wyswietlanie czasow po jednym okrazeniu
             self.game.screen.blit(self.last_timelabel, (310, 100))
             self.game.screen.blit(self.best_timelabel, (180, 150))

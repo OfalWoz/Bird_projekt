@@ -15,9 +15,14 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="ADD_SUFFIX_TO_CHERRY_PICKS_OF_PUBLISHED_COMMITS" value="false" />
+    <option name="PREVIEW_PUSH_ON_COMMIT_AND_PUSH" value="false" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="ProjectId" id="1Zx4n4mGk36Oo92J2MKRBBg89Bo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,8 +30,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/run.py" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -65,6 +71,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="872" y="178" key="#Notifications" timestamp="1590948206001">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="872" y="178" key="#Notifications/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590948206001" />
     <state x="734" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585767869633">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -77,22 +87,22 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1102" y="436" key="Github.CreateGistDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590672758189" />
-    <state width="2539" height="197" key="GridCell.Tab.0.bottom" timestamp="1590847293590">
+    <state width="2539" height="197" key="GridCell.Tab.0.bottom" timestamp="1591014443866">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590847293590" />
-    <state width="2539" height="197" key="GridCell.Tab.0.center" timestamp="1590847293589">
+    <state width="2539" height="197" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591014443866" />
+    <state width="2539" height="197" key="GridCell.Tab.0.center" timestamp="1591014443866">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590847293589" />
-    <state width="2539" height="197" key="GridCell.Tab.0.left" timestamp="1590847293589">
+    <state width="2539" height="197" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591014443866" />
+    <state width="2539" height="197" key="GridCell.Tab.0.left" timestamp="1591014443866">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590847293589" />
-    <state width="2539" height="197" key="GridCell.Tab.0.right" timestamp="1590847293589">
+    <state width="2539" height="197" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591014443866" />
+    <state width="2539" height="197" key="GridCell.Tab.0.right" timestamp="1591014443866">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590847293589" />
+    <state width="2539" height="197" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591014443866" />
     <state width="2539" height="347" key="GridCell.Tab.1.bottom" timestamp="1590697018146">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -109,18 +119,18 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2539" height="347" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590697018146" />
-    <state x="781" y="162" key="SettingsEditor" timestamp="1590689625507">
+    <state x="781" y="162" key="SettingsEditor" timestamp="1590948190792">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="781" y="162" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590689625507" />
+    <state x="781" y="162" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590948190792" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1590692675866">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590692675866" />
-    <state x="981" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1590835630704">
+    <state x="981" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591007158667">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="981" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590835630704" />
+    <state x="981" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591007158667" />
     <state x="1060" y="324" key="git4idea.history.wholeTree.VcsStructureChooser" timestamp="1590675190371">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
