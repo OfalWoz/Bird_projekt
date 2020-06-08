@@ -53,14 +53,14 @@ class Tor_two_one(object):
         if self.p_pos.x <= 387:
             self.p_pos.x = 388
 
-        if self.p_pos.y >= 536:
-            self.p_pos.y = 535
+        if self.p_pos.y >= 651:
+            self.p_pos.y = 651
 
         if self.p_pos.y <= 194:
             self.p_pos.y = 195
 
-        if self.p_v == Vector2(0,10):
-            self.p_v = Vector2(0,9.9)
+        if self.p_v == Vector2(0, 10):
+            self.p_v = Vector2(0, 9.9)
         else:
             self.p_v += self.p_a
         self.p_pos += self.p_v
@@ -98,38 +98,31 @@ class Tor_two_one(object):
             self.play = pygame.image.load('bolid_red_up_left.png')
 
         #przeszkody
-        self.blok_1 = pygame.Rect(432, 255, 70, 100)
-        self.blok_2 = pygame.Rect(432, 350, 350, 100)
-        self.blok_3 = pygame.Rect(790, 450, 98, 5)
-
-        self.grass_1 = pygame.Rect(528, 160, 500, 100)
-        self.grass_2 = pygame.Rect(578, 260, 500, 40)
-        self.grass_3 = pygame.Rect(830, 310, 200, 50)
+        self.grass_1 = pygame.Rect(526, 160, 90, 100)
+        self.grass_2 = pygame.Rect(550, 260, 50, 40)
+        self.grass_3 = pygame.Rect(830, 194, 200, 161)
         self.grass_4 = pygame.Rect(870, 358, 200, 30)
         self.grass_5 = pygame.Rect(924, 384, 200, 500)
-        self.grass_6 = pygame.Rect(387, 517, 1000, 500)
+        self.grass_6 = pygame.Rect(387, 517, 364, 500)
         self.grass_7 = pygame.Rect(387, 194, 11, 1000)
-        self.grass_8 = pygame.Rect(501, 325, 270, 167)
-        self.grass_9 = pygame.Rect(422, 264, 50, 200)
+        self.grass_8 = pygame.Rect(484, 325, 270, 167)
+        self.grass_9 = pygame.Rect(422, 264, 80, 200)
         self.grass_10 = pygame.Rect(784, 362, 20, 70)
+        self.grass_11 = pygame.Rect(640, 251, 162, 140)
+        self.grass_12 = pygame.Rect(823, 422, 63, 170)
+        self.grass_13 = pygame.Rect(746, 555, 53, 96)
 
         #kolizje
-        if self.blok_1.collidepoint((self.p_pos.x, self.p_pos.y)) or self.blok_2.collidepoint((self.p_pos.x, self.p_pos.y)) or self.blok_3.collidepoint((self.p_pos.x, self.p_pos.y)):
-            pygame.mixer.music.load('UI_Quirky33.mp3')
-            pygame.mixer.music.play()
-            self.p_pos = Vector2(550, 500)
-            self.check = 0
-            self.minutes = 0
-            self.seconds = 0
-            self.milliseconds = 0
-
-        if self.grass_1.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_2.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_3.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_4.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_5.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_6.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_7.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_8.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_9.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_10.collidepoint((self.p_pos.x, self.p_pos.y)):
+        if self.grass_1.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_2.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_3.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_4.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_5.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_6.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_7.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_8.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_9.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_10.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_11.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_12.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_13.collidepoint((self.p_pos.x, self.p_pos.y)):
             self.p_a *= 0.1
 
         #mierzenie czasu i punkty
         self.stop = pygame.Rect(518, 490, 1, 150)
-        self.check_1 = pygame.Rect(450, 195, 1, 100)
-        self.check_2 = pygame.Rect(850, 395, 1, 100)
+        self.check_1 = pygame.Rect(454, 197, 1, 50)
+        self.check_2 = pygame.Rect(616, 277, 50, 1)
+        self.check_3 = pygame.Rect(724, 194, 1, 50)
+        self.check_4 = pygame.Rect(850, 387, 1, 50)
+        self.check_5 = pygame.Rect(873, 621, 1, 50)
 
         #checkpoints
         if self.check_1.collidepoint((self.p_pos.x, self.p_pos.y)) and self.check < 1:
@@ -144,8 +137,26 @@ class Tor_two_one(object):
             pygame.mixer.music.load('UI_Quirky1.mp3')
             pygame.mixer.music.play()
 
+        if self.check_3.collidepoint((self.p_pos.x, self.p_pos.y)) and self.check == 2:
+            self.check += 1
+            print(self.check)
+            pygame.mixer.music.load('UI_Quirky1.mp3')
+            pygame.mixer.music.play()
+
+        if self.check_4.collidepoint((self.p_pos.x, self.p_pos.y)) and self.check == 3:
+            self.check += 1
+            print(self.check)
+            pygame.mixer.music.load('UI_Quirky1.mp3')
+            pygame.mixer.music.play()
+
+        if self.check_5.collidepoint((self.p_pos.x, self.p_pos.y)) and self.check == 4:
+            self.check += 1
+            print(self.check)
+            pygame.mixer.music.load('UI_Quirky1.mp3')
+            pygame.mixer.music.play()
+
         #linia mety
-        if self.check >= 2 and self.stop.collidepoint((self.p_pos.x, self.p_pos.y)):
+        if self.check >= 5 and self.stop.collidepoint((self.p_pos.x, self.p_pos.y)):
             pygame.mixer.music.load('UI_Quirky1.mp3')
             pygame.mixer.music.play()
             self.last_minutes = self.minutes

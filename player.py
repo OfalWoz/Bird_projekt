@@ -100,10 +100,6 @@ class Player(object):
             self.play = pygame.image.load('bolid_red_up_left.png')
 
         #przeszkody
-        self.blok_1 = pygame.Rect(432, 255, 70, 100)
-        self.blok_2 = pygame.Rect(432, 350, 350, 100)
-        self.blok_3 = pygame.Rect(790, 450, 98, 5)
-
         self.grass_1 = pygame.Rect(528, 160, 500, 100)
         self.grass_2 = pygame.Rect(578, 260, 500, 40)
         self.grass_3 = pygame.Rect(830, 310, 200, 50)
@@ -111,19 +107,9 @@ class Player(object):
         self.grass_5 = pygame.Rect(924, 384, 200, 500)
         self.grass_6 = pygame.Rect(387, 517, 1000, 500)
         self.grass_7 = pygame.Rect(387, 194, 11, 1000)
-        self.grass_8 = pygame.Rect(501, 325, 270, 167)
-        self.grass_9 = pygame.Rect(422, 264, 50, 200)
+        self.grass_8 = pygame.Rect(484, 325, 270, 167)
+        self.grass_9 = pygame.Rect(422, 264, 80, 200)
         self.grass_10 = pygame.Rect(784, 362, 20, 70)
-
-        #kolizje
-        if self.blok_1.collidepoint((self.p_pos.x, self.p_pos.y)) or self.blok_2.collidepoint((self.p_pos.x, self.p_pos.y)) or self.blok_3.collidepoint((self.p_pos.x, self.p_pos.y)):
-            pygame.mixer.music.load('UI_Quirky33.mp3')
-            pygame.mixer.music.play()
-            self.p_pos = Vector2(550, 500)
-            self.check = 0
-            self.minutes = 0
-            self.seconds = 0
-            self.milliseconds = 0
 
         if self.grass_1.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_2.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_3.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_4.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_5.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_6.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_7.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_8.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_9.collidepoint((self.p_pos.x, self.p_pos.y)) or self.grass_10.collidepoint((self.p_pos.x, self.p_pos.y)):
             self.p_a *= 0.1
