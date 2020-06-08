@@ -2,9 +2,10 @@ import pygame
 import  sys
 from player import  Player
 from tor_two_one import Tor_two_one
+from tor_one_two import Tor_one_two
 from pygame import  mixer
 
-class tor_one(object):
+class One_two(object):
 
     def __init__(self):
         #konfiguracja
@@ -13,17 +14,17 @@ class tor_one(object):
         pygame.init()
         self.szerokosc = 1280
         self.wysokosc = 720
-        self.screen = pygame.display.set_mode((self.szerokosc, self.wysokosc))  # rodzielczosc, bedzie sie pozniej dostosowywac do monitora
+        self.screen = pygame.display.set_mode((self.szerokosc, self.wysokosc))
         self.fpsClock = pygame.time.Clock()
         self.delta = 0.0
-        self.player = Player(self)
+        self.player = Tor_one_two(self)
 
         # trzymanie okna
         while True:
             for self.event in pygame.event.get():
                 if self.event.type == pygame.QUIT:
                     sys.exit(0)
-                elif self.event.type == pygame.KEYDOWN and self.event.key == pygame.K_ESCAPE:  # kiedys bedzie menu
+                elif self.event.type == pygame.KEYDOWN and self.event.key == pygame.K_ESCAPE:
                     Menu()
 
             self.delta += self.fpsClock.tick() / 1000.0
@@ -41,7 +42,7 @@ class tor_one(object):
     def draw(self):
         self.player.draw()
 
-class tor_two(object):
+class Tor_one(object):
 
     def __init__(self):
         #konfiguracja
@@ -50,7 +51,44 @@ class tor_two(object):
         pygame.init()
         self.szerokosc = 1280
         self.wysokosc = 720
-        self.screen = pygame.display.set_mode((self.szerokosc, self.wysokosc))  # rodzielczosc, bedzie sie pozniej dostosowywac do monitora
+        self.screen = pygame.display.set_mode((self.szerokosc, self.wysokosc))
+        self.fpsClock = pygame.time.Clock()
+        self.delta = 0.0
+        self.player = Player(self)
+
+        # trzymanie okna
+        while True:
+            for self.event in pygame.event.get():
+                if self.event.type == pygame.QUIT:
+                    sys.exit(0)
+                elif self.event.type == pygame.KEYDOWN and self.event.key == pygame.K_ESCAPE:
+                    Menu()
+
+            self.delta += self.fpsClock.tick() / 1000.0
+            while self.delta > 1 / self.FPS:  # Ograniczenie FPS
+                self.tick()
+                self.delta -= 1 / self.FPS
+
+            self.screen.fill((53, 107, 57))
+            self.draw()
+            pygame.display.flip()
+
+    def tick(self):
+        self.player.tick()
+
+    def draw(self):
+        self.player.draw()
+
+class Tor_two(object):
+
+    def __init__(self):
+        #konfiguracja
+        self.FPS = 60
+        click = False
+        pygame.init()
+        self.szerokosc = 1280
+        self.wysokosc = 720
+        self.screen = pygame.display.set_mode((self.szerokosc, self.wysokosc))
         self.fpsClock = pygame.time.Clock()
         self.delta = 0.0
         self.player = Tor_two_one(self)
@@ -60,7 +98,7 @@ class tor_two(object):
             for self.event in pygame.event.get():
                 if self.event.type == pygame.QUIT:
                     sys.exit(0)
-                elif self.event.type == pygame.KEYDOWN and self.event.key == pygame.K_ESCAPE:  # kiedys bedzie menu
+                elif self.event.type == pygame.KEYDOWN and self.event.key == pygame.K_ESCAPE:
                     Menu()
 
             self.delta += self.fpsClock.tick() / 1000.0
@@ -87,7 +125,7 @@ class Select(object):
         pygame.init()
         self.szerokosc = 1280
         self.wysokosc = 720
-        self.screen = pygame.display.set_mode((self.szerokosc, self.wysokosc))  # rodzielczosc, bedzie sie pozniej dostosowywac do monitora
+        self.screen = pygame.display.set_mode((self.szerokosc, self.wysokosc))
         self.fpsClock = pygame.time.Clock()
         self.delta = 0.0
         font = pygame.font.Font(None, 32)
@@ -118,17 +156,23 @@ class Select(object):
             #przyciski
             button_1 = pygame.Rect(352, 131, 135, 135)
             button_2 = pygame.Rect(352, 370, 135, 135)
+            button_4 = pygame.Rect(777, 132, 135, 135)
             button_3 = pygame.Rect(514, 648, 135, 35)
             if button_1.collidepoint((mx, my)):
                 if click:
                     pygame.mixer.music.load('carstartgarage.mp3')
                     pygame.mixer.music.play()
-                    tor_one()
+                    Tor_one()
             if button_2.collidepoint((mx, my)):
                 if click:
                     pygame.mixer.music.load('carstartgarage.mp3')
                     pygame.mixer.music.play()
-                    tor_two()
+                    Tor_two()
+            if button_4.collidepoint((mx, my)):
+                if click:
+                    pygame.mixer.music.load('carstartgarage.mp3')
+                    pygame.mixer.music.play()
+                    One_two()
             if button_3.collidepoint((mx, my)):
                 if click:
                     Menu()

@@ -32,7 +32,7 @@ class Player(object):
         self.hight = 695
         self.widht = 1255
 
-        self.p_pos = Vector2(550, 500)
+        self.p_pos = Vector2(514, 500)
         self.p_v = Vector2(0, 0)
         self.p_a = Vector2(0, 0)
 
@@ -83,20 +83,12 @@ class Player(object):
            self.p_a += Vector2(-0.5, 0)
            self.play = pygame.image.load('bolid_red_left.png')
         if pygame.key.get_pressed()[pygame.K_d] and pygame.key.get_pressed()[pygame.K_s]:
-            self.p_a += Vector2(0, 0.05)
-            self.p_a += Vector2(0.05, 0)
             self.play = pygame.image.load('bolid_red_down_right.png')
         if pygame.key.get_pressed()[pygame.K_s] and pygame.key.get_pressed()[pygame.K_a]:
-            self.p_a += Vector2(-0.05, 0)
-            self.p_a += Vector2(0, 0.05)
             self.play = pygame.image.load('bolid_red_down_left.png')
         if pygame.key.get_pressed()[pygame.K_w] and pygame.key.get_pressed()[pygame.K_d]:
-            self.p_a += Vector2(0,-0.05)
-            self.p_a += Vector2(0.05, 0)
             self.play = pygame.image.load('bolid_red_up_right.png')
         if pygame.key.get_pressed()[pygame.K_w] and pygame.key.get_pressed()[pygame.K_a]:
-            self.p_a += Vector2(0,-0.5)
-            self.p_a += Vector2(0, 0.5)
             self.play = pygame.image.load('bolid_red_up_left.png')
 
         #przeszkody
