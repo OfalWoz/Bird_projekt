@@ -31,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/run.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/Scripts" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -42,7 +42,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\lskcr\Desktop\uczelnia\Bird_projekt\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\lskcr\Desktop\projekt\Bird_projekt\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -71,38 +71,46 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="872" y="178" key="#Inspections" timestamp="1591805124285">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="872" y="178" key="#Inspections/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591805124285" />
     <state x="872" y="178" key="#Notifications" timestamp="1590948206001">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="872" y="178" key="#Notifications/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590948206001" />
-    <state x="734" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585767869633">
+    <state x="734" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591805516713">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="734" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1585767869633" />
-    <state x="1060" y="275" key="FileChooserDialogImpl" timestamp="1585767863171">
+    <state x="734" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591805516713" />
+    <state x="1664" y="262" key="FileChooserDialogImpl" timestamp="1591805494358">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1585767863171" />
+    <state x="1664" y="262" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591805494358" />
     <state x="1102" y="436" key="Github.CreateGistDialog" timestamp="1590672758189">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1102" y="436" key="Github.CreateGistDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590672758189" />
-    <state width="2539" height="197" key="GridCell.Tab.0.bottom" timestamp="1591648852205">
+    <state width="2539" height="197" key="GridCell.Tab.0.bottom" timestamp="1591997855831">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591648852205" />
-    <state width="2539" height="197" key="GridCell.Tab.0.center" timestamp="1591648852205">
+    <state width="2539" height="197" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591864786831" />
+    <state width="2539" height="197" key="GridCell.Tab.0.bottom/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1591997855831" />
+    <state width="2539" height="197" key="GridCell.Tab.0.center" timestamp="1591997855831">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591648852205" />
-    <state width="2539" height="197" key="GridCell.Tab.0.left" timestamp="1591648852205">
+    <state width="2539" height="197" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591864786831" />
+    <state width="2539" height="197" key="GridCell.Tab.0.center/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1591997855831" />
+    <state width="2539" height="197" key="GridCell.Tab.0.left" timestamp="1591997855831">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591648852205" />
-    <state width="2539" height="197" key="GridCell.Tab.0.right" timestamp="1591648852205">
+    <state width="2539" height="197" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591864786831" />
+    <state width="2539" height="197" key="GridCell.Tab.0.left/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1591997855831" />
+    <state width="2539" height="197" key="GridCell.Tab.0.right" timestamp="1591997855831">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="2539" height="197" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591648852205" />
+    <state width="2539" height="197" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591864786831" />
+    <state width="2539" height="197" key="GridCell.Tab.0.right/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1591997855831" />
     <state width="2539" height="347" key="GridCell.Tab.1.bottom" timestamp="1590697018146">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -119,21 +127,30 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="2539" height="347" key="GridCell.Tab.1.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590697018146" />
-    <state x="781" y="162" key="SettingsEditor" timestamp="1591189689278">
+    <state x="781" y="162" key="SettingsEditor" timestamp="1591805503790">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="781" y="162" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591189689278" />
+    <state x="781" y="162" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591805503790" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1590692675866">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590692675866" />
-    <state x="981" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591642795084">
+    <state x="981" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591995493315">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="981" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591642795084" />
+    <state x="981" y="344" key="com.intellij.ide.util.TipDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1591862743270" />
+    <state x="981" y="344" key="com.intellij.ide.util.TipDialog/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1591995493315" />
+    <state x="1273" y="0" width="1294" height="1047" key="dock-window-1" timestamp="1591995629399">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1273" y="0" width="1294" height="1047" key="dock-window-1/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1591995629399" />
     <state x="1060" y="324" key="git4idea.history.wholeTree.VcsStructureChooser" timestamp="1590675190371">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1060" y="324" key="git4idea.history.wholeTree.VcsStructureChooser/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1590675190371" />
+    <state x="303" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1591995834672">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="303" y="230" width="672" height="678" key="search.everywhere.popup/2560.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1591995834672" />
   </component>
 </project>

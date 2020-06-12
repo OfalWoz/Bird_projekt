@@ -1,5 +1,7 @@
-import  pygame
+import pygame
+from pygame import mixer
 from pygame.math import Vector2
+
 
 class Tor_two_one(object):
 
@@ -59,6 +61,8 @@ class Tor_two_one(object):
         self.check_3 = pygame.Rect(724, 194, 1, 50)
         self.check_4 = pygame.Rect(850, 387, 1, 50)
         self.check_5 = pygame.Rect(873, 621, 1, 50)
+
+
 
     def tick(self):
         #stoper
@@ -166,6 +170,7 @@ class Tor_two_one(object):
             self.milliseconds = 0
             self.check = 0
             self.lap += 1
+
 
     def draw(self):
         self.timelabel = self.font.render("{}:{}:{}".format(self.minutes, self.seconds, self.milliseconds), 1,(0, 0, 0))

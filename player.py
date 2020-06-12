@@ -172,6 +172,5 @@ class Player(object):
             print('x-', mx)
             print('y-', my)
         if pygame.key.get_pressed()[pygame.K_p]:
-            mx, my = pygame.mouse.get_pos()  # pozycja myszki
             print('x-', self.p_pos.x)
             print('y-', self.p_pos.y)

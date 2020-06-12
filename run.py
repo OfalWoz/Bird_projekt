@@ -1,9 +1,9 @@
 import pygame
-import  sys
-from player import  Player
+import sys
+from player import Player
 from tor_two_one import Tor_two_one
 from tor_one_two import Tor_one_two
-from pygame import  mixer
+from pygame import mixer
 
 class One_two(object):
 
