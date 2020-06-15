@@ -51,3 +51,8 @@ Bird v1.3
 	-wjechania w budynek i zresetownia okrazenia
 	-muzyka w menu
 -nowe ograniczenie toru
+
+Bird v1.4
+-gra jest w pełni grywalna 
+-2 tory
+-2 tryby gry (single to można nazwać treningiem i multi wysicig dla 2 graczy na 3 okrazenia)
