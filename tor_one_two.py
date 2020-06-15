@@ -298,7 +298,7 @@ class Tor_one_two(object):
             self.check2 = 0
             self.lap2 += 1
 
-        if self.lap >= 4:
+        if self.lap >= 0:
             pygame.mixer.music.load('win.mp3')
             pygame.mixer.music.play()
             Win_red()
